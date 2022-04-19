@@ -3,6 +3,7 @@ package net.frozenorb.foxtrot.team.menu.button;
 import lombok.AllArgsConstructor;
 import net.frozenorb.foxtrot.lib.menu.Button;
 import net.frozenorb.foxtrot.team.Team;
+import net.frozenorb.foxtrot.team.commands.team.TeamCommands;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.ClickType;
@@ -20,7 +21,7 @@ public class MuteButton extends Button {
 
     @Override
     public void clicked(Player player, int i, ClickType clickType) {
-        TeamShadowMuteCommand.teamShadowMute(player, team, minutes);
+        TeamCommands.teamShadowMute(player, team, minutes);
     }
 
     @Override

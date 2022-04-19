@@ -17,6 +17,7 @@ import net.frozenorb.foxtrot.server.EnderpearlCooldownHandler;
 import net.frozenorb.foxtrot.server.ServerHandler;
 import net.frozenorb.foxtrot.server.SpawnTagHandler;
 import net.frozenorb.foxtrot.team.Team;
+import net.frozenorb.foxtrot.team.commands.team.TeamCommands;
 import net.frozenorb.foxtrot.util.CC;
 import net.frozenorb.foxtrot.util.Logout;
 import org.apache.commons.lang.StringEscapeUtils;
@@ -232,8 +233,8 @@ public class FoxtrotScoreboardProvider implements AssembleAdapter {
     }
 
     public String getFStuckScore(Player player) {
-        if (TeamStuckCommand.getWarping().containsKey(player.getName())) {
-            float diff = TeamStuckCommand.getWarping().get(player.getName()) - System.currentTimeMillis();
+        if (TeamCommands.getWarping().containsKey(player.getName())) {
+            float diff = TeamCommands.getWarping().get(player.getName()) - System.currentTimeMillis();
 
             if (diff >= 0) {
                 return (ScoreFunction.TIME_FANCY.apply(diff / 1000F));

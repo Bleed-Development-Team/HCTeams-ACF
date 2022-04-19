@@ -5,7 +5,6 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
-import me.vaperion.blade.annotation.Name;
 import net.frozenorb.foxtrot.Foxtrot;
 import net.frozenorb.foxtrot.listener.BorderListener;
 import org.bukkit.ChatColor;
@@ -19,7 +18,7 @@ public class SetWorldBorderCommand extends BaseCommand {
 
     @Default
     @Description("Sets the world border to the specified size")
-    public static void setWorldBorder(Player sender, @Name("border") int border) {
+    public static void setWorldBorder(Player sender, int border) {
         BorderListener.BORDER_SIZE = border;
         sender.sendMessage(ChatColor.GRAY + "The world border is now set to " + BorderListener.BORDER_SIZE + " blocks.");
 

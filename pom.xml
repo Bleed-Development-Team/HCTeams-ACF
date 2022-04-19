@@ -151,12 +151,6 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.github.vaperion</groupId>
-            <artifactId>blade</artifactId>
-            <version>2.1.8</version>
-            <scope>compile</scope>
-        </dependency>
-        <dependency>
             <groupId>com.github.NoSequel</groupId>
             <artifactId>TabAPI</artifactId>
             <version>c51f5f5b3f</version>

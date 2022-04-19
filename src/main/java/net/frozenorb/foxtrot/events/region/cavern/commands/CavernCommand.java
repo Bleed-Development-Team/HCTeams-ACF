@@ -1,8 +1,6 @@
 package net.frozenorb.foxtrot.events.region.cavern.commands;
 
-import me.vaperion.blade.annotation.Command;
-import me.vaperion.blade.annotation.Permission;
-import me.vaperion.blade.annotation.Sender;
+
 import net.frozenorb.foxtrot.Foxtrot;
 import net.frozenorb.foxtrot.events.region.cavern.Cavern;
 import net.frozenorb.foxtrot.events.region.cavern.CavernHandler;
@@ -15,9 +13,9 @@ import static org.bukkit.ChatColor.*;
 
 public class CavernCommand {
 
-    @Command(value = "cavern scan")
-    @Permission(value = "op")
-    public static void cavernScan(@Sender Player sender) {
+    //@Command(value = "cavern scan")
+    //@Permission(value = "op")
+    public static void cavernScan(Player sender) {
         if (!Foxtrot.getInstance().getConfig().getBoolean("cavern", false)) {
             sender.sendMessage(RED + "Cavern is currently disabled. Check config.yml to toggle.");
             return;
@@ -49,9 +47,9 @@ public class CavernCommand {
         sender.sendMessage(GREEN + "[Cavern] Scanned all ores and saved Cavern to file!");
     }
 
-    @Command(value = "cavern reset")
-    @Permission(value = "op")
-    public static void cavernReset(@Sender Player sender) {
+    //@Command(value = "cavern reset")
+    //@Permission(value = "op")
+    public static void cavernReset(Player sender) {
         Team team = Foxtrot.getInstance().getTeamHandler().getTeam(CavernHandler.getCavernTeamName());
 
         // Make sure we have a team, claims, and a mountain!

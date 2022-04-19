@@ -5,7 +5,6 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
-import me.vaperion.blade.annotation.Name;
 import net.frozenorb.foxtrot.Foxtrot;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -18,7 +17,7 @@ public class SetWorldBufferCommand extends BaseCommand {
 
     @Default
     @Description("Sets the world buffer")
-    public static void setWorldBuffer(Player sender, @Name("worldBuffer") int newBuffer) {
+    public static void setWorldBuffer(Player sender, int newBuffer) {
         Foxtrot.getInstance().getMapHandler().setWorldBuffer(newBuffer);
         sender.sendMessage(ChatColor.GRAY + "The world buffer is now set to " + newBuffer + " blocks.");
 

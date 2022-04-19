@@ -5,9 +5,6 @@ import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.CommandPermission;
 import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Subcommand;
-import me.vaperion.blade.annotation.Command;
-import me.vaperion.blade.annotation.Permission;
-import me.vaperion.blade.annotation.Sender;
 import net.frozenorb.foxtrot.Foxtrot;
 import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
@@ -50,9 +47,9 @@ public class KothScheduleCommand extends BaseCommand {
         }
     }
 
-    @Command(value = {"KOTHSchedule debug"})
-    @Permission(value = "op")
-    public static void kothScheduleDebug(@Sender CommandSender sender) {
+    //@Command(value = {"KOTHSchedule debug"})
+    //@Permission(value = "op")
+    public static void kothScheduleDebug(CommandSender sender) {
         Foxtrot.getInstance().getEventHandler().fillSchedule();
         sender.sendMessage(ChatColor.GREEN + "The event schedule has been filled.");
     }

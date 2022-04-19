@@ -2,8 +2,9 @@ package net.frozenorb.foxtrot.commands;
 
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
+import co.aikar.commands.annotation.Default;
+import co.aikar.commands.annotation.Description;
 import co.aikar.commands.annotation.Optional;
-import me.vaperion.blade.annotation.Command;
 import net.frozenorb.foxtrot.economy.FrozenEconomyHandler;
 import net.frozenorb.foxtrot.util.CC;
 import org.bukkit.ChatColor;
@@ -16,7 +17,8 @@ import java.util.Locale;
 @CommandAlias("balance|bal|$|Econ")
 public class BalanceCommand extends BaseCommand {
 
-    @Command(value ={ "Balance", "Econ", "Bal", "$" })
+    @Default
+    @Description("Checks a player's balance.")
     public static void balance(Player sender, @Optional OfflinePlayer player) {
         if (player == null) {
             sender.sendMessage(ChatColor.GOLD + "Balance: " + ChatColor.WHITE + NumberFormat.getNumberInstance(Locale.US).format(FrozenEconomyHandler.getBalance(sender.getUniqueId())));

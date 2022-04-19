@@ -1,9 +1,5 @@
 package net.frozenorb.foxtrot.events;
 
-import me.vaperion.blade.argument.BladeArgument;
-import me.vaperion.blade.argument.BladeProvider;
-import me.vaperion.blade.context.BladeContext;
-import me.vaperion.blade.exception.BladeExitMessage;
 import net.frozenorb.foxtrot.Foxtrot;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.ChatColor;

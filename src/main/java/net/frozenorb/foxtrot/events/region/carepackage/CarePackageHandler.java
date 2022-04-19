@@ -2,8 +2,6 @@ package net.frozenorb.foxtrot.events.region.carepackage;
 
 import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
-import me.vaperion.blade.annotation.Command;
-import me.vaperion.blade.annotation.Permission;
 import net.frozenorb.foxtrot.Foxtrot;
 import net.frozenorb.foxtrot.redis.RedisCommand;
 import net.frozenorb.foxtrot.team.claims.LandBoard;
@@ -54,8 +52,8 @@ public class CarePackageHandler implements Listener {
         }
     }
 
-    @Command(value = "savecarepackageloot", async = true)
-    @Permission(value = "op")
+    //@Command(value = "savecarepackageloot", async = true)
+    //@Permission(value = "op")
     public static void save(Player sender) {
         Foxtrot.getInstance().runBackboneRedisCommand((redis) -> {
             String lookupString = Bukkit.getServer().getName() + ":" + "carePackageLoot";

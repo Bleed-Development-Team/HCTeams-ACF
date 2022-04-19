@@ -3,8 +3,8 @@ package net.frozenorb.foxtrot.commands;
 import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.CommandPermission;
-import me.vaperion.blade.annotation.Command;
-import me.vaperion.blade.annotation.Permission;
+import co.aikar.commands.annotation.Default;
+import co.aikar.commands.annotation.Description;
 import net.frozenorb.foxtrot.Foxtrot;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -19,8 +19,9 @@ import java.util.UUID;
 @CommandPermission("op")
 public class AssociateViewCommand extends BaseCommand {
 
-    @Command(value ={ "assview", "associateview" })
-    @Permission("op")
+
+    @Default
+    @Description("{@@descriptions.associateview}")
     public static void associate(Player sender, Player player) {
         UUID player2 = null;
         if( Foxtrot.getInstance().getWhitelistedIPMap().contains(player.getUniqueId())) {

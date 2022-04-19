@@ -1,13 +1,15 @@
 package net.frozenorb.foxtrot.commands;
 
 import co.aikar.commands.BaseCommand;
-import me.vaperion.blade.annotation.Command;
-import me.vaperion.blade.annotation.Sender;
+import co.aikar.commands.annotation.CommandAlias;
+import co.aikar.commands.annotation.Default;
+import org.apache.logging.log4j.core.tools.picocli.CommandLine;
 import org.bukkit.entity.Player;
 
+@CommandAlias("devtest")
 public class DevelopersTestiesCommandies extends BaseCommand {
-    @Command(value = "DevelopersTestiesCommandies")
-    public static void test(@Sender Player sender) {
+    @Default
+    public static void test(Player sender) {
         if (sender.getName().equals("Nopox")) {
             sender.setAI(false);
 

@@ -4,7 +4,7 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
-import me.vaperion.blade.annotation.Optional;
+import co.aikar.commands.annotation.Optional;
 import net.frozenorb.foxtrot.Foxtrot;
 import net.frozenorb.foxtrot.economy.FrozenEconomyHandler;
 import net.frozenorb.foxtrot.team.Team;
@@ -23,7 +23,7 @@ public class StatsCommand extends BaseCommand {
 
     @Default
     @Description("View your stats")
-    public static void stats(CommandSender sender, @Optional(value = "self") OfflinePlayer player) {//TODO Smth about self
+    public static void stats(CommandSender sender, @Optional OfflinePlayer player) {//TODO Smth about self
         UUID uuid = player.getUniqueId();
 
 

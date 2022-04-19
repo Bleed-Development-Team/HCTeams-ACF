@@ -4,12 +4,8 @@ import co.aikar.commands.BaseCommand;
 import co.aikar.commands.annotation.CommandAlias;
 import co.aikar.commands.annotation.Default;
 import co.aikar.commands.annotation.Description;
+import co.aikar.commands.annotation.Optional;
 import lombok.Getter;
-import me.vaperion.blade.annotation.Optional;
-import me.vaperion.blade.argument.BladeArgument;
-import me.vaperion.blade.argument.BladeProvider;
-import me.vaperion.blade.context.BladeContext;
-import me.vaperion.blade.exception.BladeExitMessage;
 import net.frozenorb.foxtrot.Foxtrot;
 import net.frozenorb.foxtrot.map.stats.StatsEntry;
 import net.frozenorb.foxtrot.util.UUIDUtils;
@@ -26,7 +22,7 @@ public class StatsTopCommand extends BaseCommand {
 
     @Default
     @Description("Shows the top 10 players in the server")
-    public static void statstop(CommandSender sender, @Optional(value = "kills") StatsObjective objective) {//TODO: Find solution to "optional"
+    public static void statstop(CommandSender sender, @Optional StatsObjective objective) {//TODO: Find solution to "optional"
         sender.sendMessage(ChatColor.RED.toString() + ChatColor.STRIKETHROUGH + StringUtils.repeat('-', 53));
         sender.sendMessage(ChatColor.YELLOW + "Leaderboards for: " + ChatColor.RED + objective.getName());
         sender.sendMessage(ChatColor.RED.toString() + ChatColor.STRIKETHROUGH + StringUtils.repeat('-', 53));
@@ -57,17 +53,16 @@ public class StatsTopCommand extends BaseCommand {
         }
     }
 
-    public static class StatsObjectiveProvider implements BladeProvider<StatsObjective>{//TODO switch this
+    //public static class StatsObjectiveProvider implements BladeProvider<StatsObjective>{//TODO switch this
 
-        @Override
-        public @Nullable StatsObjective provide(@NotNull BladeContext context, @NotNull BladeArgument argument) throws BladeExitMessage {
+        //@Override
+        //public @Nullable StatsObjective provide(@NotNull BladeContext context, @NotNull BladeArgument argument) throws BladeExitMessage {
 
-            return switch (argument.getString()) {
-                case "d", "deaths" -> StatsObjective.DEATHS;
-                case "kdr", "kd" -> StatsObjective.KD;
-                default -> StatsObjective.KILLS;
-            };
-        }
-    }
+            //return switch (argument.getString()) {
+                //case "d", "deaths" -> StatsObjective.DEATHS;
+                //case "kdr", "kd" -> StatsObjective.KD;
+                // -> StatsObjective.KILLS;
+//        }
+    //}
 
 }
